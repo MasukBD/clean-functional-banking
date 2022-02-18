@@ -37,13 +37,22 @@ function netBalance(fieldId, amount, add) {
 
 document.getElementById('deposit-button').addEventListener('click', function () {
     const inputAmount = getInputValue('deposit-input');
-    updateTotal('total-deposit', inputAmount);
-    netBalance('total-balance', inputAmount, true);
+    if (inputAmount > 0 && typeof inputAmount == 'number') {
+        updateTotal('total-deposit', inputAmount);
+        netBalance('total-balance', inputAmount, true);
+    }
+    else {
+        document.getElementById('warning2').style.display = 'block';
+    }
 });
 
 document.getElementById('Withdraw-button').addEventListener('click', function () {
     const WithdrawAmount = getInputValue('withdraw-input');
-    updateTotal('total-withdraw', WithdrawAmount);
-    netBalance('total-balance', WithdrawAmount, false);
-
+    if (WithdrawAmount > 0 && typeof WithdrawAmount == 'number') {
+        updateTotal('total-withdraw', WithdrawAmount);
+        netBalance('total-balance', WithdrawAmount, false);
+    }
+    else {
+        document.getElementById('warning2').style.display = 'block';
+    }
 });
