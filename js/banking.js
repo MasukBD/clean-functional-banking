@@ -31,6 +31,7 @@ function netBalance(fieldId, amount, add) {
         }
         else {
             document.getElementById('warning').style.display = 'block';
+            document.getElementById('warning2').style.display = 'none';
         }
     }
 }
@@ -43,6 +44,7 @@ document.getElementById('deposit-button').addEventListener('click', function () 
     }
     else {
         document.getElementById('warning2').style.display = 'block';
+        document.getElementById('warning').style.display = 'none';
     }
 });
 
@@ -54,5 +56,6 @@ document.getElementById('Withdraw-button').addEventListener('click', function ()
     }
     else {
         document.getElementById('warning2').style.display = 'block';
+        document.getElementById('warning').style.display = 'none';
     }
 });
